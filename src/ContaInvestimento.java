@@ -13,14 +13,16 @@ public class ContaInvestimento {
 
     public void depositar(double valor){
         saldo += valor;
+        System.out.println("\nDeposito de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+saldo);
     }
 
     public void sacar(double valor){
         if (saldo >= valor){
             saldo -= valor;
+            System.out.println("\nSaque de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+saldo);
         }
         else{
-            System.out.println("Sua conta nao tem saldo suficiente para este saque");
+            System.out.println(">>> Sua conta nao tem saldo suficiente para este saque <<<");
         }
     }
 
@@ -33,8 +35,10 @@ public class ContaInvestimento {
         ContaInvestimento test2 = new ContaInvestimento(50384, "Joao", 1000, 10);
         for (int i = 0; i < 5; i++) {
             test2.adicionaJuros();
-            System.out.println("\nSua conta rendeu!!\nSaldo atual: " + test2.saldo);
+            System.out.println("\nSua conta rendeu!!\n=> Saldo atual: R$ " + test2.saldo);
 
         }
+        test2.sacar(500);
+        test2.depositar(2600);
     }
 }
