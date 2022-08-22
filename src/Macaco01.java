@@ -39,6 +39,12 @@ public class Macaco01 {
         if(vazio){
             System.out.println("O estomago ja esta vazio");
         }
+        for(int i=0; i < estomago.length; i++){
+            if(i+1 < 5){
+                estomago[i] = estomago[i + 1];
+                estomago[i+1] = null;
+            }
+        }
     }
 
     public static void main(String[] args) {
