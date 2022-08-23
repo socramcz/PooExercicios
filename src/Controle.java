@@ -50,9 +50,15 @@ public class Controle {
             System.out.println("\nVolume atual "+ tv.volume);
             System.out.println("=> Digite (1) para AUMENTAR o volume\n=> Digite (2) para DIMINUIR o volume");
             int mVolume = test2.nextInt();
-            if(mVolume == 1){ tv.aumentarVolume();}
-            if(mVolume == 2){ tv.diminuirVolume();}
-            else { System.out.println("Comando invalido");}
+            if(mVolume == 1){
+                tv.aumentarVolume();
+            }
+            if(mVolume == 2){
+                tv.diminuirVolume();
+            }
+            else {
+                System.out.println("Comando invalido");
+            }
         }
 
         else { System.out.println("Comando invalido");}
