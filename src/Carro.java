@@ -14,18 +14,13 @@ public class Carro {
 
     private void andar(double distancia){
         double gasto = distancia/this.consumo;
-        if(gasto <= combustivel) {
-            this.combustivel -= test;
-            System.out.println("\n=> Carro percorreu " + distancia + "KM" + "\nGastou: " + gasto + "L" + "\nCombustivel restante: " + combustivel);
-        }
-        else{
-            System.out.println("Combustivel insuficiente");
-        }
+        this.combustivel -= gasto;
+        System.out.println("\n=> Carro percorreu " +distancia+ "KM"+"\nGastou: " +gasto+ "L"+"\nCombustivel restante: "+combustivel);
     }
 
     private void abastecer(double quantidade){
         combustivel += quantidade;
-        System.out.println("\n=> Carro abastecido com " +quantidade+ "L"+"\nTanque: " +combustivel+ "L");
+        System.out.println("\n=> Carro abastecido com "+quantidade+"L"+"\nTanque: "+combustivel+"L");
     }
 
     public static void main(String[] args) {
