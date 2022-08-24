@@ -4,25 +4,37 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ContaCorrente {
+    private int nConta;
     private String nome;
-    private int conta;
     private double saldo;
 
-    public ContaCorrente(int conta, String nome, double saldo){
-        this.conta = conta;
+    public ContaCorrente(int nConta, String nome){
+        this.nConta = nConta;
         this.nome = nome;
-        this.saldo = saldo;
+        this.saldo = 0;
+    }
+
+    public int getnConta(){
+        return nConta;
+    }
+
+    public String getNome(){
+        return nome;
+    }
+
+    public double getSaldo(){
+        return saldo;
     }
 
     public void depositar(double valor){
         saldo += valor;
-        System.out.println("\nDeposito de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+saldo);
+        System.out.println("\nDeposito de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+getSaldo());
     }
 
     public void sacar(double valor){
         if (saldo >= valor){
             saldo -= valor;
-            System.out.println("\nSaque de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+saldo);
+            System.out.println("\nSaque de R$ "+valor+" realizado com sucesso\n=> Saldo atual: R$ "+getSaldo());
         }
         else{
             System.out.println(">>> Sua conta nao tem saldo suficiente para este saque <<<");
@@ -31,39 +43,61 @@ public class ContaCorrente {
 
     // TESTE DA CLASSE //
     public static void main(String[] args) {
-        // Crie um programa que permita criar uma conta ou acessar uma existente
-        // Caso seja acessar, deve permitir depositar ou sacar
-
         List<ContaCorrente> banco = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
 
-        while (true){
+        while(true){
             System.out.println("\nDigite (1) para criar uma nova conta\nDigite (2) para fazer login");
             int askUser = scan.nextInt();
 
             if(askUser == 1){
-
-                System.out.println("Digite seus DOIS primeiros nomes da conta:");
-                String nomeConta = scan.nextLine();
+                System.out.println("\nDigite seu nome:");
+                String nomeConta = scan.next();
 
                 Random rdm = new Random();
                 int min = 100000;
                 int max = 999999;
 
                 int numConta = (int)Math.floor(Math.random()*(max-min+1)+min);
-                ContaCorrente test1 = new ContaCorrente(numConta, nomeConta);
-                System.out.println("Conta criada!!\nNome: "+nomeConta+"\nNumero da conta: "+numConta);
-                    banco.add(test1);
+                ContaCorrente c1 = new ContaCorrente(numConta, nomeConta);
+                System.out.println("Conta criada com sucesso!!\n=> Nome: "+nomeConta+"\n=> Numero da conta: "+numConta);
+                banco.add(c1);
             }
 
             else if(askUser == 2){
-                System.out.println("Digite seu nome:");
-                String nome = scan.nextLine();
+                System.out.println("\nDigite seu nome:");
+                String nome = scan.next();
 
                 System.out.println("Digite o numero da conta:");
                 int nConta = scan.nextInt();
 
+                for(ContaCorrente c: banco){
+                    if(c.getnConta() == nConta && c.getNome().equals(nome)){
+                        System.out.println("\n>>> Login realizado com sucesso <<<");
+                        System.out.println("\n=> Digite (1) para depositar\n=> Digite (2) para sacar");
+                        int askUser2 = scan.nextInt();
 
+                        if(askUser2 == 1){
+                            System.out.println("Quanto deseja depositar?");
+                            double valor = scan.nextInt();
+                            c.depositar(valor);
+                        }
+                        else if(askUser2 == 2){
+                            System.out.println("Quanto deseja sacar?");
+                            double valor = scan.nextInt();
+                            c.sacar(valor);
+                        }
+                        else {
+                            System.out.println("Opcao invalida");
+                        }
+                    }
+
+                }
+
+
+            }
+            else {
+                System.out.println("Opcao invalida");
             }
         }
     }
