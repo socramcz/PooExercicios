@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-public class Macaco01 {
+public class Macaco {
     private String nome;
     private String[] estomago;
 
-    public Macaco01(String nome){
+    public Macaco(String nome){
         this.nome = nome;
         estomago = new String[5];
     }
@@ -48,7 +48,7 @@ public class Macaco01 {
     }
 
     public static void main(String[] args) {
-        Macaco01 cezar = new Macaco01("cezar");
+        Macaco cezar = new Macaco("cezar");
         System.out.println("\nO ESTOMAGO TA COM...");
         cezar.comer("Banana");
         cezar.comer("Pedra");
