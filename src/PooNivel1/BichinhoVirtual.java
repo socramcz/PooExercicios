@@ -1,3 +1,5 @@
+package PooNivel1;
+
 public class BichinhoVirtual {
 
     private String nome;
@@ -50,7 +52,7 @@ public class BichinhoVirtual {
 
     @Override
     public String toString() {
-        return "\nBichinhoVirtual\n" +
+        return "\nPooIniciante.BichinhoVirtual\n" +
                 "\nNome= '" + nome + '\'' +
                 "\nFome= " + fome +
                 "\nSaude= " + saude +

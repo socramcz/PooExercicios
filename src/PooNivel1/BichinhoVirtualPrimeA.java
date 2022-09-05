@@ -1,3 +1,5 @@
+package PooNivel1;
+
 import java.util.Scanner;
 
 public class BichinhoVirtualPrimeA {
@@ -56,7 +58,7 @@ public class BichinhoVirtualPrimeA {
 
     @Override
     public String toString() {
-        return "\nBichinhoVirtual\n" +
+        return "\nPooIniciante.BichinhoVirtual\n" +
                 "\nNome=  '" + getNome() + '\'' +
                 "\nFome=  " + getFome() +
                 "\nSaude= " + getSaude() +

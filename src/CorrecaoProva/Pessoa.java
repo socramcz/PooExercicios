@@ -37,7 +37,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "\nCorrecaoProva.Pessoa{" +
+        return "\nCorrecaoProva.PooIniciante.Pessoa{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", altura=" + altura +

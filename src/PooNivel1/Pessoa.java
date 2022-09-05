@@ -1,3 +1,5 @@
+package PooNivel1;
+
 public class Pessoa {
 
     private String nome;
@@ -32,7 +34,7 @@ public class Pessoa {
     }
 
     public String toString(){
-        return "Pessoa [nome=" + nome + ", idade=" + idade + ", peso=" + peso + ", altura=" + altura + "]";
+        return "PooIniciante.Pessoa [nome=" + nome + ", idade=" + idade + ", peso=" + peso + ", altura=" + altura + "]";
     }
 
     public static void main(String[] args) {

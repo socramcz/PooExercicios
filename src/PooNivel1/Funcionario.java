@@ -1,3 +1,5 @@
+package PooNivel1;
+
 public class Funcionario {
 
     private String nome;

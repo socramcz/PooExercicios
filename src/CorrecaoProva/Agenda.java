@@ -17,7 +17,7 @@ public class Agenda {
             if(pessoas[i] == null){
                 pessoas[i] = fulano;
                 cheio = false;
-                System.out.println("CorrecaoProva.Pessoa adicionada ("+nome+")");
+                System.out.println("CorrecaoProva.PooIniciante.Pessoa adicionada ("+nome+")");
                 break;
             }
         }
@@ -32,18 +32,18 @@ public class Agenda {
             if(pessoas[i].getNome().equals(nome)){
                 pessoas[i] = null;
                 achei = true;
-                System.out.println("\nCorrecaoProva.Pessoa removida ("+nome+")");
+                System.out.println("\nCorrecaoProva.PooIniciante.Pessoa removida ("+nome+")");
             }
         }
         if(!achei){
-            System.out.println("\nCorrecaoProva.Pessoa nao encontrada");
+            System.out.println("\nCorrecaoProva.PooIniciante.Pessoa nao encontrada");
         }
     }
 
     public int buscaPessoa(String nome){
         for(int i=0; i < pessoas.length; i++){
             if(pessoas[i].getNome().equals(nome)){
-                System.out.println("CorrecaoProva.Pessoa encontrada ("+nome+")");
+                System.out.println("CorrecaoProva.PooIniciante.Pessoa encontrada ("+nome+")");
                 return i;
             }
         }
@@ -63,7 +63,7 @@ public class Agenda {
             }
         }
         if(!achei){
-            System.out.println("\nCorrecaoProva.Pessoa nao encontrada");
+            System.out.println("\nCorrecaoProva.PooIniciante.Pessoa nao encontrada");
         }
     }
 
