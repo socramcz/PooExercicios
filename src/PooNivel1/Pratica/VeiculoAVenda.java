@@ -11,7 +11,7 @@ public class VeiculoAVenda {
     }
 
     public String getTipo() {
-        return "Tipo do veiculo: "+tipo;
+        return "\nTipo do veiculo: "+tipo;
     }
 
     public void setTipo(String tipo) {
@@ -27,7 +27,6 @@ public class VeiculoAVenda {
     }
 
     public Double getPreçoDeVenda() {
-        System.out.println("Valor do veiculo: ");
         return preçoDeVenda;
     }
 
